@@ -97,7 +97,7 @@ hr {
   width: 100%;
 }
 
-.videos .box {
+.box {
   border-right: 1px solid #fff;
 }
 
@@ -219,7 +219,7 @@ img.hover-shadow {
     grid-template-columns: 1fr;
   }
 
-  .section .box {
+  .box {
     border-right: none;
     border-bottom: 1px solid #fff;
   }
