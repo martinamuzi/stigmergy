@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<title>Boids</title>
+
+<script language=JavaScript src="mouse2.js"></script>
+<script language=JavaScript src="boids_sim2.js"></script>
+</head>
+<body onLoad="init();">
+
+<table border=0>
+<tr><td colspan=4 align=center>
+<canvas id="viewport" width=2400 height=2400 style="width:100%; border:1px solid black;"></canvas>
+</td></tr>
+<tr><td>Zoom: </td><td align=right><input type="range" id=zoomDial min="10" max="40" value=10 onInput="setZoom(this.value);"></td></tr>
+<tr><th></th><th>Number of agents</th><th>Movement speed</th></tr>
+<tr><td>Boids: <span id=boidLabel></span></td><td align=right><input type="range" id=boidDial min="100" max="2500" value=1000 onInput="setBoidNumber(this.value);"></td><td align=right><input type="range" id=speedDial min="10" max="100" value=50 onInput="setBoidSpeed(this.value);"></td><td></td></tr>
+<tr><td>Predators: <span id=predatorLabel></span></td><td align=right><input type="range" id=predatorDial min="0" max="5" value=0 onInput="setPredatorNumber(this.value);"></td><td align=right><input type="range" id=predatorSpeedDial min="10" max="100" value=60 onInput="setPredatorSpeed(this.value);"></td><td></td></tr>
+<tr><th>Action</th><th>Distance</th><th>Strength</th><th>Show</th></tr>
+<tr><td>Avoid collisions</td><td align=right><input type="range" id=avoidRange min="5" max="250" value=7 onInput="setAvoidRange(this.value);"></td><td align=right><input type="range" id=avoidStrength min="0" max="150" value=71 onInput="setAvoidStrength(this.value);"></td><td align=center><input type="checkbox" id=showAvoid onClick="toggleAvoid(this.checked);"></td></tr>
+<tr><td>Align with flockmates</td><td align=right><input type="range" id=alignRange min="5" max="250" value=28 onInput="setAlignRange(this.value);"></td><td align=right><input type="range" id=alignStrength min="0" max="150" value=44 onInput="setAlignStrength(this.value);"></td><td align=center><input type="checkbox" id=showAlign onClick="toggleAlign(this.checked);"></td></tr>
+<tr><td>Approach flockmates</td><td align=right><input type="range" id=attractRange min="5" max="250" value=71 onInput="setAttractRange(this.value);"></td><td align=right><input type="range" id=attractStrength min="0" max="150" value=10 onInput="setAttractStrength(this.value);"></td><td align=center><input type="checkbox" id=showAttract onClick="toggleAttract(this.checked);"></td></tr>
+<tr><td>Predator avoidance</td><td align=right><input type="range" id=fleeingRange min="5" max="250" value=51 onInput="setFleeRange(this.value);"></td><td align=right><input type="range" id=fleeStrength min="0" max="150" value=130 onInput="setFleeStrength(this.value);"></td><td align=center><input type="checkbox" id=showFleeing onClick="toggleFleeing(this.checked);"></td></tr>
+<tr><td>Stay close to the center</td><td align=right><input type="range" id=roostDial min="0" max="50" value=0 onInput="setRoostSize(this.value);"></td><td align=right><input type="range" id=roostStrength min="0" max="150" value=55 onInput="setRoostStrength(this.value);"></td><td align=center><input type="checkbox" id=showRoost checked onClick="toggleRoost(this.checked);"></td></tr>
+</table>

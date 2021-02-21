@@ -1,0 +1,149 @@
+<html>
+<!-- This is a test site using flocking boids code written by http://www.harmendeweerd.nl/ (thank u Harmen!) -->
+
+<head>
+  <title>Stigmergy</title>
+  <link href="stylesheet.css" rel="stylesheet">
+  <script language=JavaScript src="mouse.js"></script>
+  <script language=JavaScript src="boids_sim.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  .header-homepage {
+    margin-top: 15px;
+    padding: 12px;
+    position: fixed;
+  }
+
+  .menu {
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  .menu p {
+    display: inline;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #CCFF00;
+    font-style: italic;
+  }
+  </style>
+
+</head>
+
+<body onLoad="init();">
+  <div class="header-homepage">
+    <h1>Looking for Stigmergy →</h1>
+  </div>
+  <div class="background">
+    <canvas id="boidwindow" width=2400 height=2400></canvas>
+  </div>
+  <div class="menu">
+    <p><a href="">About</a></p><br>
+    <p>→ Episode 2: Coming soon <small>✺ April 2021 ✺ exhibition ✺ Istanbul Biennial ✺</small><br></p>
+    <p>→ <a href="episode-01.html">Episode 1: From Underwater to Outer Space</a></p> <small>✺ February 2021 ✺ online radio event ✺ Design Academy Eindhoven ✺ </small> <br>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- - - - - - - - - - - - - - start controls  - - - - - - - - - - - - -  -->
+  <div id="boidcontrols">
+    <table border=0>
+      <tr>
+        <td colspan=4 align=center>
+      <tr>
+        <td>Zoom: </td>
+        <td align=right><input type="range" id=zoomDial min="10" max="40" value=10 onInput="setZoom(this.value);"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Number of agents</th>
+        <th>Movement speed</th>
+      </tr>
+      <tr>
+        <td>Boids: <span id=boidLabel></span></td>
+        <td align=right><input type="range" id=boidDial min="100" max="2500" value=3000 onInput="setBoidNumber(this.value);"></td>
+        <td align=right><input type="range" id=speedDial min="10" max="100" value=30 onInput="setBoidSpeed(this.value);"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Predators: <span id=predatorLabel></span></td>
+        <td align=right><input type="range" id=predatorDial min="0" max="5" value=0 onInput="setPredatorNumber(this.value);"></td>
+        <td align=right><input type="range" id=predatorSpeedDial min="10" max="100" value=60 onInput="setPredatorSpeed(this.value);"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>Action</th>
+        <th>Distance</th>
+        <th>Strength</th>
+        <th>Show</th>
+      </tr>
+      <tr>
+        <td>Avoid collisions</td>
+        <td align=right><input type="range" id=avoidRange min="5" max="250" value=7 onInput="setAvoidRange(this.value);"></td>
+        <td align=right><input type="range" id=avoidStrength min="0" max="150" value=71 onInput="setAvoidStrength(this.value);"></td>
+        <td align=center><input type="checkbox" id=showAvoid onClick="toggleAvoid(this.checked);"></td>
+      </tr>
+      <tr>
+        <td>Align with flockmates</td>
+        <td align=right><input type="range" id=alignRange min="5" max="250" value=28 onInput="setAlignRange(this.value);"></td>
+        <td align=right><input type="range" id=alignStrength min="0" max="150" value=44 onInput="setAlignStrength(this.value);"></td>
+        <td align=center><input type="checkbox" id=showAlign onClick="toggleAlign(this.checked);"></td>
+      </tr>
+      <tr>
+        <td>Approach flockmates</td>
+        <td align=right><input type="range" id=attractRange min="5" max="250" value=71 onInput="setAttractRange(this.value);"></td>
+        <td align=right><input type="range" id=attractStrength min="0" max="150" value=10 onInput="setAttractStrength(this.value);"></td>
+        <td align=center><input type="checkbox" id=showAttract onClick="toggleAttract(this.checked);"></td>
+      </tr>
+      <tr>
+        <td>Predator avoidance</td>
+        <td align=right><input type="range" id=fleeingRange min="5" max="250" value=51 onInput="setFleeRange(this.value);"></td>
+        <td align=right><input type="range" id=fleeStrength min="0" max="150" value=130 onInput="setFleeStrength(this.value);"></td>
+        <td align=center><input type="checkbox" id=showFleeing onClick="toggleFleeing(this.checked);"></td>
+      </tr>
+      <tr>
+        <td>Stay close to the center</td>
+        <td align=right><input type="range" id=roostDial min="0" max="50" value=0 onInput="setRoostSize(this.value);"></td>
+        <td align=right><input type="range" id=roostStrength min="0" max="150" value=55 onInput="setRoostStrength(this.value);"></td>
+        <td align=center><input type="checkbox" id=showRoost onClick="toggleRoost(this.checked);"></td>
+      </tr>
+    </table>
+  </div>
+  <!-- - - - - - - - - - - - - - end controls  - - - - - - - - - - - - -  -->
+
+</body>
+
+</html>
