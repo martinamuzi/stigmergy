@@ -228,4 +228,8 @@ img.hover-shadow {
     border-right: none;
     border-bottom: 1px solid #fff;
   }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
