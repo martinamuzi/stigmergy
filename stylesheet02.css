@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #ffff00;
+  animation: fade 60s infinite alternate;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+/* ----------------------- LAYOUT ----------------------- */
+header {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #111;
+}
+
+header .box {
+  border: none;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#about {
+  display: none;
+  border-top: 1px solid #111;
+  background: inherit;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box {
+  padding: 12px;
+  width: 100%;
+  border-bottom: 1px solid #111;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+/* ----------------------- TYPE ----------------------- */
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+p.title {
+  font-size: 20px;
+  font-style: ;
+  padding-bottom: 6px;
+}
+
+p.description {
+  font-size: 16px;
+}
+
+p.credits {
+  font-size: 12px;
+  color: #999;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
+
+a:hover {
+  color: #0000FF;
+  font-style: italic;
+  border-bottom: 1px solid #0000FF;
+}
+
+small {
+  display: inline;
+  font-size: 14px;
+}
+
+hr {
+  border-top: 0px;
+  border-bottom: 1px solid #111;
+}
+
+/* ----------------------- VIDEO ----------------------- */
+.images img {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.box {
+  border-right: 1px solid #111;
+}
+
+/* ----------------------- BOIDS ----------------------- */
+.background {
+  margin-top: -15;
+  z-index: +1;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 120px);
+  max-height: 100vw;
+}
+
+#boidwindow {
+  filter: invert(100%);
+}
+
+#boidcontrols {
+  display: none;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------- LIGHTBOX ----------------------- */
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1280px;
+  height: 90%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ----------------------- BACKGROUND COLOR ----------------------- */
+@keyframes fade {
+  0% {
+    background-color: : #ffff00;
+  }
+
+  100% {
+    background-color: #ffff00;
+  }
+}
+
+/* ---------------------------- MOBILE ---------------------------- */
+@media only screen and (max-width:800px) {
+
+  /* For mobile phones: */
+  header {
+    grid-template-columns: 1fr;
+    padding-bottom: 7.5px;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  .images {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    border-right: none;
+    border-bottom: 1px solid #111;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
