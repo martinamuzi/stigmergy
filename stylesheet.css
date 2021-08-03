@@ -87,9 +87,7 @@ a {
 }
 
 a:hover {
-  color: #CCFF00;
   font-style: italic;
-  border-bottom: 1px solid #CCFF00;
 }
 
 small {
